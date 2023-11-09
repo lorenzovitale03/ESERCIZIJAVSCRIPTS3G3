@@ -70,7 +70,7 @@
 
     <div id="tableArea"></div>
 
-    <footer>
+    <footer onclick="revealFooterLink()">
       <h3>
         DOM Manipulation is super
         <a
@@ -212,8 +212,26 @@
       /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
+    
+      /*const revealFooterLink = function () {
+        //individuo l'elemento interessato tramite selettore 
+        let footerSel = document.querySelector("footer");
+        //individuo l'elemento interessato tramite selettore 
+        let footerUrl = document.querySelector("footer a");
+        footerSel.addEventListener("click",function(e){
+          alert(footerUrl.href);
+        })
 
-      const revealFooterLink = function () {}
+      //}
+
+      console.log(revealFooterLink);*/
+
+      const revealFooterLink = function () {
+        let link = document.querySelector("footer a").href;
+        alert(link);
+
+      }
+      
 
       /* ESERCIZIO 11
        Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
