@@ -36,7 +36,7 @@
   <body>
     <div id="par">
       <h1>Questo è il titolo della pagina</h1>
-      <h2>Questo è il sottotitolo della pagina</h2>
+      <h2 id="changeMyColor">Questo è il sottotitolo della pagina</h2>
     </div>
 
     <div>
@@ -238,26 +238,83 @@
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
-      const generateTable = function () {}
+      function generateTable () {
+        //creo la tabella 
+        let tabella = document.createElement("table");
+        let tableArea = document.getElementById("tableArea");
+        let bodyTab = document.createElement("tbody");
+        let headerTab = document.createElement("thead");
+        let rigaTab = document.createElement("tr");
+        let thTab = document.createElement("th");
+        thTab.innerText="immagine";
+        let thTab2 = document.createElement("th");
+        thTab2.innerText="nome prodotto";
+        let thTab3 = document.createElement("th");
+        thTab3.innerText="quantità";
+        let thTab4 = document.createElement("th");
+        thTab4.innerText="prezzo";
+        tableArea.appendChild(tabella);
+        tabella.appendChild(headerTab);
+        tabella.appendChild(bodyTab);
+        headerTab.appendChild(rigaTab);
+        rigaTab.appendChild(thTab);
+        rigaTab.appendChild(thTab2);
+        rigaTab.appendChild(thTab3);
+        rigaTab.appendChild(thTab4);
+      }
 
+      generateTable();
       /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
-      const addRow = function () {}
+        function addRow (immagine,nomeProdotto,quantita,prezzo) {
+          let recuperoTab = document.querySelector("#tableArea > table > tbody");
+          let rigaTab = document.createElement("tr");
+          let datiTab = document.createElement("td");
+          let datiTab2 = document.createElement("td");
+          let datiTab3 = document.createElement("td");
+          let datiTab4 = document.createElement("td");
+          datiTab.innerText = immagine;
+          datiTab2.innerText= nomeProdotto;
+          datiTab3.innerText= quantita;
+          datiTab4.innerText= prezzo;
+          rigaTab.appendChild(datiTab);
+          rigaTab.appendChild(datiTab2);
+          rigaTab.appendChild(datiTab3);
+          rigaTab.appendChild(datiTab4);
+          recuperoTab.appendChild(rigaTab);
+        }
+
+        addRow("pippo","macchina","6","20");
+        addRow("pluto","macchina","8","20");
+        addRow("paperino","macchina","12","25");
+        addRow("gastone","macchina","2","2111");
+        addRow("pippo","macchina","6","20");
+        addRow("pippo","macchina","6","20");
+        addRow("pippo","macchina","6","20");
+        addRow("pippo","macchina","6","20");
 
       /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
     */
 
-      const hideAllImages = function () {}
+      function hideAllImages () {
+         
+        
+      }
+
+      
 
       /* EXTRA ESERCIZIO 15
       Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
     */
 
-      const changeColorWithRandom = function () {}
+      function changeColorWithRandom() {
+        
+      }
 
+      
       /* EXTRA ESERCIZIO 16
       Crea una funzione che elimini le vocali da ogni elemento testuale della pagina (puoi aiutarti con i nuovi metodi degli array di ES6)
     */
